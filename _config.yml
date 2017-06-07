@@ -1,0 +1,36 @@
+# Site settings
+version: 2.2
+
+title: Joern‘s micro.blog
+email: me@joern.im
+description: This is a micro.blog.
+baseurl: "" # the subpath of your site, e.g. /blog/
+permalink: /:categories/:title/
+url: "https://microblog.joern.im" # the base hostname & protocol for your site
+twitter_username: joernba
+github_username:  joernba
+gitlab_username: joernba
+# Build settings
+timezone: Europe/Berlin
+markdown: kramdown
+sass:
+    style: compressed
+exclude:
+  - Gemfile
+  - Gemfile.lock
+  - package.json
+  - README.md
+  - CNAME
+  - node_modules
+
+# Plugins
+# mini_magick:
+#     thumbnail:
+#         source: assets/images/works
+#         destination: img/photos/thumbnail
+#         resize: "140x140^"
+#         crop: "140x140-0x0"
+#     medium:
+#         source: assets/images/works
+#         destination: img/photos/medium
+#         resize: "600x400"

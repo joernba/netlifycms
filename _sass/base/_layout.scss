@@ -1,0 +1,31 @@
+/* Layout
+-------------------------------------------------- */
+
+.wrapper {
+  // position: relative;
+  min-height: 100vh;
+  margin: $border-width-negative auto $border-width-negative auto;
+}
+.header,
+.main {
+  position: relative;
+  width: 100%;
+  height: auto;
+
+  @include center;
+}
+.inner {
+  margin: 0 auto;
+  width: 40%;
+  @include media(not-large) {
+    width: 60%;
+  }
+  @include media(mobile-only) {
+    width: 100%;
+  }
+}
+.footer {
+  margin-bottom: $border-width;
+}
+
+@import 'base/background';

@@ -1,0 +1,39 @@
+// LAYOUT
+
+$base-px: 16;
+
+$border-width: 1rem;
+$border-width-negative: -1 * $border-width;
+
+// COLORS
+
+// COLORS BY NAME
+$c-salmon: #ffcab1;
+$c-brown-light: #e0dbce;
+$c-green-dark: #5c7457;
+$c-green: #8cc084;
+$c-green-light: #77cbb9;
+$white: #ffffff;
+$black: #000000;
+$highlight-color: $c-green-light;
+
+// COLORS BY USE
+$c-page-border: $c-brown-light;
+
+// Gutters
+$pad: 1em;
+
+// FONTS
+
+$f-serif: 'FreightText W01 Light', Georgia, Cambria, 'Times New Roman', Times, serif;
+
+$f-sans: 'MetaCompPro-Light W01 Regular', Helvetica, Arial, sans-serif;
+
+$f-sans-alt: 'MetaCompPro-CondBold W01 Rg', 'HelveticaNeue-CondensedBold', Helvetica, Arial, sans-serif;
+
+// ANIMATIONS
+
+$easeOutCubic: cubic-bezier(0.215, 0.61, 0.355, 1);
+$easeOutQuint: cubic-bezier(0.23, 1, 0.32, 1);
+$easeInOutCirc: cubic-bezier(0.785, 0.135, 0.15, 0.86);
+$easing-default: $easeOutCubic;

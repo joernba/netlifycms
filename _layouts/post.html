@@ -1,0 +1,11 @@
+---
+layout: default
+---
+
+<div class="inner">
+  <article class="content">
+    <h1 class="section-title">{{ page.title }}</h1>
+    <p class="post-meta">{{ page.date }}{% if page.author %}  • <a href="https://micro.blog/{{ page.author }}">{{ page.author }}</a>{% endif %}{% if page.meta %} • {{ page.meta }}{% endif  %}</p>
+    {{ content }}
+</article>
+</div>

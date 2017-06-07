@@ -1,0 +1,123 @@
+// MIXINS
+
+// UTILITIES
+
+// Mixin: anti-alias text
+
+@mixin alias (
+  $style: 'antialias'
+) {
+  @if $style == 'normal' {
+    -webkit-font-smoothing: subpixel-antialiased;
+  } @else {
+    -webkit-font-smoothing: antialiased;
+  }
+}
+
+// Mixin: font sizing in both rems and px
+
+@mixin font-size (
+  $sizeValue: 16
+) {
+  font-size: $sizeValue + px;
+  font-size: ($sizeValue / 16) + rem;
+}
+
+// LAYOUT STYLES
+
+// Media Queries
+
+$tall-height: "min-height: 45rem";
+
+$breakpoint-mobile: 600px;
+$breakpoint-mobile-plus: $breakpoint-mobile + 1;
+
+$page-max-width: 960px;
+$page-max-width-plus: $page-max-width + 1;
+
+$breakpoint-large: $page-max-width + 6 * $base-px;
+
+$header-max-width: $page-max-width;
+$body-wrap-width: 33rem;
+$body-wrap-width-article: 34rem;
+
+$mobile-only: screen and (max-width: $breakpoint-mobile);
+$not-mobile: screen and (min-width: ($breakpoint-mobile + 2));
+
+@mixin media($media) {
+  @if $media == mobile-only {
+    @media screen and (max-width: $breakpoint-mobile) { @content; }
+  }
+  @else if $media == not-mobile {
+    @media screen and (min-width: $breakpoint-mobile-plus) { @content; }
+  }
+  @else if $media == wide-screens {
+    @media screen and (min-width: $page-max-width-plus) { @content; }
+  }
+  @else if $media == not-large {
+    @media screen and (max-width: $breakpoint-large) { @content; }
+  } @else {
+    @media screen and #{$media} { @content; }
+  }
+}
+
+// Mixin: center with margins
+
+@mixin center {
+  margin-right: auto;
+  margin-left: auto;
+}
+
+// Mixin: Underline
+
+@mixin underline($color) {
+  border-bottom: 2px solid $color;
+}
+
+// Boxsizing
+
+@mixin box-sizing($type) {
+  -webkit-box-sizing:$type;
+  -moz-box-sizing:$type;
+  box-sizing:$type;
+}
+
+/* Animations
+http://zerosixthree.se/8-sass-mixins-you-must-have-in-your-toolbox/
+*/
+
+@mixin keyframes($animation-name) {
+    @-webkit-keyframes #{$animation-name} {
+        @content;
+    }
+    @-moz-keyframes #{$animation-name} {
+        @content;
+    }  
+    @-ms-keyframes #{$animation-name} {
+        @content;
+    }
+    @-o-keyframes #{$animation-name} {
+        @content;
+    }  
+    @keyframes #{$animation-name} {
+        @content;
+    }
+}
+
+@mixin animation($str) {
+  -webkit-animation: #{$str};
+  -moz-animation: #{$str};
+  -ms-animation: #{$str};
+  -o-animation: #{$str};
+  animation: #{$str};      
+}
+
+@mixin transition($args...) {
+  -webkit-transition: $args;
+  -moz-transition: $args;
+  -ms-transition: $args;
+  -o-transition: $args;
+  transition: $args;
+}
+
+@import 'utils/flexbox';

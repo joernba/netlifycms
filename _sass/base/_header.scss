@@ -1,0 +1,31 @@
+.header {
+  max-width: $page-max-width;
+  @include media(mobile-only) {
+    text-align: center;
+  }
+}
+
+.logo {
+  display: inline-block;
+  margin-top: 6rem;
+  margin-bottom: 1.5rem;
+  margin-left: 15%;
+  letter-spacing: 1px;
+  text-transform: uppercase;
+  font-size: 1.1rem;
+  @extend %font-sans;
+  @include underline($c-green-light);
+  @include animation('2s ease-out slide-in');
+  &:hover {
+    @include underline(transparent);
+  }
+  @include media(mobile-only) {
+    margin-top: 7.5rem;
+    margin-left: 0;
+  }
+}
+@include keyframes(slide-in) {
+  0% { transform: translateY(-60px); opacity: 0; }
+  50% { transform: translateY(-60px); opacity: 0; }
+  90% { transform: translateY(0); opacity: 1; }
+}

@@ -1,0 +1,42 @@
+/* Main
+-------------------------------------------------- */
+
+figure,
+.content li {
+  @include font-size(18);
+}
+.main {
+
+  @extend %font-serif;
+  p,
+  figure,
+  ul,
+  ol {
+    margin-bottom: 1em;
+  }
+  hr {
+    height: 2px;
+    margin: 3em 0;
+    background: $c-brown-light;
+  }
+  a {
+    border-bottom: 2px solid $c-green-dark;
+  }
+  a:hover {
+    border-color: $c-green-light;
+  }
+}
+
+.content {
+  padding-top: 5.8rem;
+
+  @include media(mobile-only) {
+    padding-top: 0.618rem;
+  }
+  @include media(not-large) {
+    clear: left;
+  }
+}
+.page-content {
+  padding: 0 1rem;
+}

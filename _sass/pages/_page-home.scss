@@ -1,0 +1,19 @@
+.short-bio {
+  font-size: 3rem;
+  line-height: 1.2;
+  margin: 6rem auto;
+  width: 600px;
+  @include animation('fade-in 1s ease-out');
+  @include media(not-large) {
+    font-size: 2rem;
+    width: 400px;
+  }
+  @include media(mobile-only) {
+    font-size: 1.3rem;
+    width: 78%;
+  }
+}
+@include keyframes(fade-in) {
+  0% { opacity: 0; transform: scale(.8); }
+  90% { opacity: 1; transform: scale(1); }
+}

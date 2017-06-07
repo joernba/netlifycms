@@ -1,0 +1,19 @@
+// SITE
+body {
+  font-size: 1.2em;
+  line-height: 1.3;
+  position: relative;
+  max-width: 50em;
+  max-width: none;
+  margin: 0 auto;
+  padding: 1.5em;
+  padding: 0;
+  color: #222222;
+  border: $border-width solid;
+  border-color: $c-page-border;
+  background-color: #ffffff;
+  transition: border-color 1s ease;
+  @include media(not-large) {
+    font-size: 1em;
+  }
+}

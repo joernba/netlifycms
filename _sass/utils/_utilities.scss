@@ -1,0 +1,52 @@
+/* Utilities
+-------------------------------------------------- */
+
+hr {
+  max-width: 13em;
+  height: 1px;
+  margin: 2em auto 2em;
+  content: '—';
+  border: none;
+
+  page-break-after: always;
+}
+
+td {
+  vertical-align: middle;
+}
+
+.floatright {
+  float: right;
+}
+.floatleft {
+  float: left;
+}
+.inlineblock {
+  display: inline-block;
+}
+.block {
+  display: block;
+}
+.center {
+  text-align: center;
+}
+.not-mobile {
+  @include media(mobile-only) {
+    display: none !important;
+  }
+}
+.mobile-only {
+  @include media(not-mobile) {
+    display: block !important;
+  }
+}
+
+/* Clearfix
+-------------------------------------------------- */
+
+.clearfix:after,
+.cf:after {
+  display: table;
+  clear: both;
+  content: '';
+}
