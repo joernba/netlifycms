@@ -15,7 +15,14 @@ collections:
       - {label: "Layout", name: "layout", widget: "hidden", default: "post"}
       - {label: "Title", name: "title", widget: "string"}
       - {label: "Publish Date", name: "date", widget: "datetime"}
-      - {label: "Image", name: "image", widget: "image", required: false}
+      -  name: "galleria"
+         label: "Gallery"
+         widget: "list"
+         optional: true
+         fields:
+          - {label: "Title", name: "imgTitle", widget: "string"}
+          - {label: "Gallery Image", name: "imgSrc", widget: "image"}
+          - {label: "Description", name: "imgDesc", widget: "string"}
       - {label: "Categories", name: "categories", widget: "string"}
       - {label: "Author", name: "author", widget: "string", default: "joernba"}
       - {label: "Body", name: "body", widget: "markdown"}
